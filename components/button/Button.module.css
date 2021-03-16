@@ -1,8 +1,12 @@
 .btn {
-  border-radius: 10px;
+  border-radius: 35px;
+  border: none;
+  color: var(--primary-font-color);
+  background: var(--secondary-color);
+  padding: 0.8rem;
 }
 
 .primary {
-  color: antiquewhite;
-  background: black;
+  color: var(--primary-font-color);
+  background: var(--secondary-color);
 }
