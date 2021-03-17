@@ -1,8 +1,7 @@
 .btn {
-  border-radius: 10px;
-}
-
-.primary {
-  color: antiquewhite;
-  background: black;
+  border-radius: 35px;
+  border: none;
+  color: var(--primary-font-color);
+  background: var(--secondary-color);
+  padding: 0.8rem;
 }
