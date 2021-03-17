@@ -5,8 +5,3 @@
   background: var(--secondary-color);
   padding: 0.8rem;
 }
-
-.primary {
-  color: var(--primary-font-color);
-  background: var(--secondary-color);
-}
