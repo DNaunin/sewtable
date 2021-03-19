@@ -1,17 +1,15 @@
 .container {
-  min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  height: 100vh;
 }
 
 .main {
-  padding: 5rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-auto-flow: column;
   align-items: center;
+}
+
+.footerimg {
+  width: 100%;
 }

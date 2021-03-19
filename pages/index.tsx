@@ -8,11 +8,15 @@ export default function Home() {
       <Head>
         <title>Sewtable</title>
         <link rel="icon" href="/favicon.ico" />
-        <Welcome />
       </Head>
 
       <main className={styles.main}>
-        <img src="/needles.svg" alt="sewing utensils" />
+        <Welcome />
+        <img
+          className={styles.footerimg}
+          src="/needles.svg"
+          alt="sewing utensils"
+        />
       </main>
     </div>
   );

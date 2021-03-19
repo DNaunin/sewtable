@@ -11,8 +11,8 @@ function Welcome() {
         src="/schneiderpuppe.svg"
         alt="a dress form"
       />
-      <Button label="How it works" />
-      <Button label="Get started" />
+      <Button className={styles.button} label="How it works" />
+      <Button className={styles.button} label="Get started" />
     </div>
   );
 }
