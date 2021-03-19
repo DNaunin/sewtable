@@ -10,4 +10,4 @@ export default {
 
 const Template: Story = (args) => <Welcome {...args} />;
 
-export const firstWelcome = Template.bind({});
+export const splashPage = Template.bind({});
