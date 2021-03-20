@@ -2,11 +2,12 @@ import styles from "./Button.module.css";
 
 export type ButtonProps = {
   label: string;
+  className?: string;
 };
 
-function Button({ label, ...props }: ButtonProps) {
+function Button({ className, label, ...props }: ButtonProps) {
   return (
-    <button className={styles.btn} {...props}>
+    <button className={`${styles.btn} ${className}`} {...props}>
       {label}
     </button>
   );

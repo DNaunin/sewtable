@@ -4,4 +4,5 @@
   color: var(--primary-font-color);
   background: var(--secondary-color);
   padding: 0.8rem;
+  margin: 0.8rem 2rem;
 }
