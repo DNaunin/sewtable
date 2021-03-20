@@ -1,0 +1,21 @@
+.howtocontainer {
+  display: grid;
+  grid-template-columns: 2fr, 1fr;
+  grid-template-rows: repeat(4, 1fr);
+}
+
+.title {
+  font-family: Ranchers, sans-serif;
+  color: var(--main-color);
+  text-align: center;
+  font-size: 1.8rem;
+  align-self: end;
+}
+
+.info {
+  font-family: Roboto, sans-serif;
+  color: var(--main-color);
+  text-align: center;
+  font-size: 1rem;
+  align-self: start;
+}
