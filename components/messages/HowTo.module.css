@@ -1,21 +1,27 @@
 .howtocontainer {
+  height: 100%;
   display: grid;
-  grid-template-columns: 2fr, 1fr;
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  background-color: var(--main-color);
 }
 
 .title {
   font-family: Ranchers, sans-serif;
-  color: var(--main-color);
+  color: var(--primary-font-color);
   text-align: center;
   font-size: 1.8rem;
-  align-self: end;
+  align-self: center;
 }
 
 .info {
   font-family: Roboto, sans-serif;
-  color: var(--main-color);
-  text-align: center;
+  color: var(--primary-font-color);
+  text-align: start;
+  padding-left: 1.5rem;
   font-size: 1rem;
-  align-self: start;
+  align-self: center;
+}
+
+.gsbtn {
+  margin: 1.5rem 5rem;
 }

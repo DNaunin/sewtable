@@ -1,4 +1,5 @@
 import styles from "./HowTo.module.css";
+import Button from "../button/Button";
 
 function HowTo() {
   return (
@@ -12,6 +13,7 @@ function HowTo() {
         Drag your pattern on the desired clothing item
       </span>
       <span className={styles.info}>How does it look?</span>
+      <Button className={styles.gsbtn} label="Get started" />
     </div>
   );
 }
