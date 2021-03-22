@@ -17,8 +17,11 @@ function Welcome() {
           <Button className={styles.button} label="How it works" />
         </a>
       </Link>
-
-      <Button className={styles.button} label="Get started" />
+      <Link href={`/canvas`}>
+        <a>
+          <Button className={styles.button} label="Get started" />
+        </a>
+      </Link>
     </div>
   );
 }
