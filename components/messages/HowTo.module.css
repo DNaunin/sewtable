@@ -1,4 +1,4 @@
-.howtocontainer {
+.howToContainer {
   height: 100%;
   display: grid;
   grid-template-rows: repeat(6, 1fr);

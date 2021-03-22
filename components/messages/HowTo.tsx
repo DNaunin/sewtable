@@ -3,7 +3,7 @@ import Button from "../button/Button";
 
 function HowTo() {
   return (
-    <div className={styles.howtocontainer}>
+    <div className={styles.howToContainer}>
       <span className={styles.title}>How it works</span>
       <span className={styles.info}>
         Take a picture of your favourite fabric
