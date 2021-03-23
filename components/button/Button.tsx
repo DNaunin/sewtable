@@ -3,6 +3,7 @@ import styles from "./Button.module.css";
 export type ButtonProps = {
   label: string;
   className?: string;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 function Button({ className, label, ...props }: ButtonProps) {
