@@ -2,8 +2,10 @@ import Head from "next/head";
 import styles from "../styles/Canvas.module.css";
 import Button from "../components/button/Button";
 import Drawing from "../components/canvas/drawingarea";
+import { useRouter } from "next/dist/client/router";
 
 export default function Canvas() {
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +18,11 @@ export default function Canvas() {
         <Drawing />
         <div className={styles.footercontainer}>
           <Button className={styles.homebtn} label="Home" />
-          <Button className={styles.backbtn} label="Back" />
+          <Button
+            className={styles.backbtn}
+            onClick={router.back}
+            label="Back"
+          />
           <img
             className={styles.footerimg}
             src="/footer.svg"
