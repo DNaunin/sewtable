@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 export default function Footer() {
   const router = useRouter();
   return (
-    <div className={styles.footercontainer}>
+    <div className={styles.footerContainer}>
       <Button label="Home" />
       <Button onClick={router.back} label="Back" />
     </div>
