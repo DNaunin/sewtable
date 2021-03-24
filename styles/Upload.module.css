@@ -1,0 +1,23 @@
+.main {
+  display: grid;
+  grid-row-gap: 0.5em;
+  height: 100vh;
+  place-content: center;
+  text-align: center;
+  color: var(--main-color);
+}
+
+.title {
+  font-size: 1.8rem;
+  font-family: Ranchers, sans-serif;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+}
+
+.form {
+  display: grid;
+  grid-row-gap: 0.5em;
+}
