@@ -7,6 +7,7 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Sewtable</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={styles.main}>
         <HowTo />
