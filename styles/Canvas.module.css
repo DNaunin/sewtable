@@ -1,37 +1,12 @@
 .main {
-  height: 100vh;
   display: grid;
   align-items: center;
+  justify-items: center;
+  grid-gap: 5em;
 }
 
 .title {
   font-family: Ranchers, sans-serif;
   color: var(--main-color);
-  text-align: center;
   font-size: 1.8rem;
-  align-self: start;
-}
-
-.footercontainer {
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr;
-  align-items: end;
-}
-
-.footerimg {
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 3;
-  z-index: 1;
-}
-
-.homebtn {
-  grid-area: 1 / 1 / 2 / 2;
-  z-index: 2;
-}
-
-.backbtn {
-  grid-area: 1 / 2 / 2 / 3;
-  z-index: 2;
 }
