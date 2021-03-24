@@ -1,0 +1,21 @@
+.main {
+  height: 100vh;
+  background-color: var(--main-color);
+  display: grid;
+}
+.title {
+  font-family: Ranchers, sans-serif;
+  color: var(--primary-font-color);
+  text-align: center;
+  font-size: 1.8rem;
+  align-self: end;
+}
+
+.machineimg {
+  margin: 1.5rem 8.3rem;
+}
+
+.footerimg {
+  position: fixed;
+  bottom: 0;
+}
