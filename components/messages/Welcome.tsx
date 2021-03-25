@@ -13,14 +13,10 @@ function Welcome() {
         alt="a dress form"
       />
       <Link href={`/introduction`}>
-        <a>
-          <Button className={styles.button} label="How it works" />
-        </a>
+        <Button className={styles.button} label="How it works" />
       </Link>
       <Link href={`/canvas`}>
-        <a>
-          <Button className={styles.button} label="Get started" />
-        </a>
+        <Button className={styles.button} label="Get started" />
       </Link>
     </div>
   );
