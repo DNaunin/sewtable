@@ -1,5 +1,6 @@
 import styles from "./HowTo.module.css";
 import Button from "../button/Button";
+import Link from "next/link";
 
 function HowTo() {
   return (
@@ -13,7 +14,9 @@ function HowTo() {
         Drag your pattern on the desired clothing item
       </span>
       <span className={styles.info}>How does it look?</span>
-      <Button className={styles.startbtn} label="Get started" />
+      <Link href={`/upload`}>
+        <Button className={styles.startbtn} label="Get started" />
+      </Link>
     </div>
   );
 }
