@@ -68,9 +68,9 @@ function Drawing() {
       </button>
       <button
         className={styles.designbtn2}
-        onClick={() => chooseDesign("/pullisven.png")}
+        onClick={() => chooseDesign("/pulliSven.png")}
       >
-        <img className={styles.designbtn2} src="/pullisven.png" />
+        <img className={styles.designbtn2} src="/pulliSven.png" />
       </button>
     </div>
   );
