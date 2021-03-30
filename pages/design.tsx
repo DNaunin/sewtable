@@ -16,8 +16,22 @@ export default function Design() {
         <div className={styles.subtitle}>
           Which pattern would you like to see?
         </div>
-        <img src="/pulliSven.png" />
-        <img src="/hoodie.png" />
+        <img
+          className={styles.patternImage}
+          src="/pulliSven.png"
+          alt="Sweater pattern"
+        />
+        <img
+          className={styles.patternImage}
+          src="/hoodie.png"
+          alt="Hoodie pattern"
+        />
+        <img
+          className={styles.patternImage}
+          src="/shirt.png"
+          alt="Shirt pattern"
+        />
+        <img className={styles.patternImage} src="/bag.png" alt="Bag pattern" />
       </main>
       <Footer />
     </>
