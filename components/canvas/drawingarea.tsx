@@ -8,6 +8,8 @@ function Drawing() {
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    const context2 = canvasRef.current.getContext("2d");
+    context2.clearRect(0, 0, window.innerWidth, window.innerHeight);
   });
 
   function createPattern(src) {
@@ -23,6 +25,7 @@ function Drawing() {
 
   function chooseDesign(src) {
     const context2 = canvasRef.current.getContext("2d");
+
     const design = new Image();
     design.src = src;
     design.onload = () => {
