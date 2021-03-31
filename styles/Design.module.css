@@ -1,0 +1,27 @@
+.main {
+  display: grid;
+  grid-row-gap: 0.5em;
+  height: 100vh;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr 1fr 2fr 2fr;
+  place-content: center;
+  text-align: center;
+  justify-items: center;
+  color: var(--main-color);
+}
+
+.title {
+  grid-area: 1 / 1 / 2 / 3;
+  font-size: 1.8rem;
+  font-family: Ranchers, sans-serif;
+}
+
+.subtitle {
+  grid-area: 2 / 1 / 3 / 3;
+  font-size: 1rem;
+  font-family: Roboto, sans-serif;
+}
+
+.patternImage {
+  max-height: 5em;
+}
