@@ -2,9 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Upload.module.css";
 import Footer from "../components/footer/Footer";
 import React, { useState } from "react";
-import Button from "../components/button/Button";
-import Link from "next/link";
-import PageLink from "../components/pagelink/pagelink";
+import Pagelink from "../components/pagelink/Pagelink";
 
 export default function Upload() {
   const [loading, setLoading] = useState(false);
@@ -60,7 +58,7 @@ export default function Upload() {
             <img src={image} className={styles.image} />
           )}
         </form>
-        <PageLink href="/canvas">Go to combine page</PageLink>
+        <Pagelink href="/canvas">Go to combine page</Pagelink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>
