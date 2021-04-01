@@ -1,0 +1,6 @@
+.pagelink {
+  border-radius: 35px;
+  color: var(--primary-font-color);
+  background: var(--secondary-color);
+  padding: 0.8rem 1.8rem;
+}
