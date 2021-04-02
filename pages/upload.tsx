@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Upload.module.css";
 import Footer from "../components/footer/Footer";
-import { useState } from "react";
-import Button from "../components/button/Button";
+import React, { useState } from "react";
+import Pagelink from "../components/pagelink/Pagelink";
 
 export default function Upload() {
   const [loading, setLoading] = useState(false);
@@ -25,6 +25,7 @@ export default function Upload() {
 
     const file = await res.json();
     setImage(file.secure_url);
+    localStorage.setItem("Image", file.secure_url);
     setLoading(false);
   };
 
@@ -56,10 +57,8 @@ export default function Upload() {
           ) : (
             <img src={image} className={styles.image} />
           )}
-          {console.log(image)}
         </form>
-
-        <Button label={"Go to combine page"} />
+        <Pagelink href="/canvas">Go to combine page</Pagelink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>

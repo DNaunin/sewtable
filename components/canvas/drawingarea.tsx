@@ -1,16 +1,21 @@
 import styles from "./Drawing.module.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Drawing() {
   const canvasRef = useRef(null);
   const canvasRef2 = useRef(null);
+  const [patternImage, setPatternImage] = useState("");
+
+  useEffect(() => {
+    setPatternImage(localStorage.getItem("Image"));
+  }, []);
 
   useEffect(() => {
     const context = canvasRef.current.getContext("2d");
     context.clearRect(0, 0, window.innerWidth, window.innerHeight);
     const context2 = canvasRef.current.getContext("2d");
     context2.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  });
+  }, []);
 
   function createPattern(src) {
     const context = canvasRef.current.getContext("2d");
@@ -37,16 +42,9 @@ function Drawing() {
     <div className={styles.patternContainer}>
       <button
         className={styles.patternimg1}
-        onClick={() =>
-          createPattern(
-            "https://images.unsplash.com/photo-1553532434-5ab5b6b84993?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8cGF0dGVybnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-          )
-        }
+        onClick={() => createPattern(patternImage)}
       >
-        <img
-          className={styles.patternimg1}
-          src="https://images.unsplash.com/photo-1553532434-5ab5b6b84993?ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8cGF0dGVybnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-        />
+        <img className={styles.patternimg1} src={patternImage} />
       </button>
       <button
         className={styles.patternimg2}
