@@ -1,4 +1,5 @@
 .pagelink {
+  font-family: Roboto, sans-serif;
   border-radius: 35px;
   color: var(--primary-font-color);
   background: var(--secondary-color);
