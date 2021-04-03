@@ -1,6 +1,5 @@
 import styles from "./Welcome.module.css";
-import Button from "../button/Button";
-import Link from "next/link";
+import Pagelink from "../pagelink/Pagelink";
 
 function Welcome() {
   return (
@@ -12,12 +11,8 @@ function Welcome() {
         src="/schneiderpuppe.svg"
         alt="a dress form"
       />
-      <Link href={`/introduction`}>
-        <Button className={styles.button} label="How it works" />
-      </Link>
-      <Link href={`/canvas`}>
-        <Button className={styles.button} label="Get started" />
-      </Link>
+      <Pagelink href="/introduction">How it works</Pagelink>
+      <Pagelink href="/canvas">Get started</Pagelink>
     </div>
   );
 }
