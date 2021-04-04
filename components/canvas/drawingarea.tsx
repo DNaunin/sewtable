@@ -6,8 +6,8 @@ let x = 1.0;
 let y = 1.0;
 
 function Drawing() {
-  const canvasRef = useRef(null);
-  const canvasRef2 = useRef(null);
+  const canvasRefFabric = useRef(null);
+  const canvasRefDesign = useRef(null);
   const [patternImage, setPatternImage] = useState("");
 
   function minusClick() {
@@ -31,11 +31,11 @@ function Drawing() {
   }, []);
 
   function createPattern(src) {
-    const context = canvasRef.current.getContext("2d");
-    context.clearRect(0, 0, 302, 152);
+    const contextFabric = canvasRefFabric.current.getContext("2d");
+    contextFabric.clearRect(0, 0, 302, 152);
     const image = new Image();
     image.src = src;
-    context.drawImage(
+    contextFabric.drawImage(
       image,
       0,
       0,
@@ -49,12 +49,12 @@ function Drawing() {
   }
 
   function chooseDesign(src) {
-    const context2 = canvasRef2.current.getContext("2d");
-    context2.clearRect(0, 0, 302, 152);
+    const contextDesign = canvasRefDesign.current.getContext("2d");
+    contextDesign.clearRect(0, 0, 302, 152);
     const design = new Image();
     design.src = src;
     design.onload = () => {
-      context2.drawImage(design, 0, 0, 302, 152);
+      contextDesign.drawImage(design, 0, 0, 302, 152);
     };
   }
 
@@ -66,22 +66,22 @@ function Drawing() {
       >
         <img className={styles.patternimg} src={patternImage} />
       </button>
-      <canvas ref={canvasRef} className={styles.canvas1}></canvas>
-      <canvas ref={canvasRef2} className={styles.canvas2}></canvas>
+      <canvas ref={canvasRefFabric} className={styles.canvasFabric}></canvas>
+      <canvas ref={canvasRefDesign} className={styles.canvasDesign}></canvas>
       <button
-        className={styles.designbtn}
+        className={styles.designHoodie}
         onClick={() => chooseDesign("/hoodie.png")}
       >
-        <img className={styles.designbtn} src="/hoodie.png" />
+        <img className={styles.designHoodie} src="/hoodie.png" />
       </button>
       <button
-        className={styles.designbtn2}
+        className={styles.designSweater}
         onClick={() => chooseDesign("/pulliSven.png")}
       >
-        <img className={styles.designbtn2} src="/pulliSven.png" />
+        <img className={styles.designSweater} src="/pulliSven.png" />
       </button>
-      <Button className={styles.zoombtn} label="-" onClick={minusClick} />
-      <Button className={styles.zoombtn} label="+" onClick={plusClick} />
+      <Button className={styles.minusbtn} label="-" onClick={minusClick} />
+      <Button className={styles.plusbtn} label="+" onClick={plusClick} />
     </div>
   );
 }

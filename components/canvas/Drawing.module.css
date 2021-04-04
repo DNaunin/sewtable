@@ -24,19 +24,19 @@
   grid-area: 2 / 2 / 3 / 3;
 }
 
-.canvas1 {
+.canvasFabric {
   grid-area: 3 / 1 / 4 / 3;
   border: 1px solid black;
   justify-self: center;
 }
 
-.canvas2 {
+.canvasDesign {
   grid-area: 3 / 1 / 4 / 3;
   border: 1px solid black;
   justify-self: center;
 }
 
-.designbtn {
+.designHoodie {
   grid-area: 4 / 1 / 5 / 2;
   border: none;
   background: none;
@@ -46,7 +46,7 @@
   padding: 0;
 }
 
-.designbtn2 {
+.designSweater {
   grid-area: 4 / 2 / 5 / 3;
   border: none;
   background: none;
