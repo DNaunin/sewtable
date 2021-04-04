@@ -1,7 +1,8 @@
 import Head from "next/head";
-import styles from "../styles/Start.module.css";
+import styles from "../styles/Home.module.css";
+import Welcome from "../components/messages/Welcome";
 
-export default function Start() {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -11,12 +12,7 @@ export default function Start() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.title}>Sewtable</div>
-        <img
-          className={styles.machineimg}
-          src="/machine.svg"
-          alt="sewing machine"
-        />
+        <Welcome />
         <img
           className={styles.footerimg}
           src="/needles.svg"

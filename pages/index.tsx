@@ -1,8 +1,12 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import Welcome from "../components/messages/Welcome";
+import styles from "../styles/Start.module.css";
+import router from "next/router";
+import { useEffect } from "react";
 
-export default function Home() {
+export default function Start() {
+  useEffect(() => {
+    setTimeout(() => router.push("/start"), 3000);
+  });
   return (
     <div className={styles.container}>
       <Head>
@@ -12,7 +16,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Welcome />
+        <div className={styles.title}>Sewtable</div>
+        <img
+          className={styles.machineimg}
+          src="/machine.svg"
+          alt="sewing machine"
+        />
         <img
           className={styles.footerimg}
           src="/needles.svg"

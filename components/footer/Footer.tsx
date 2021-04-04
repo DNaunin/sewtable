@@ -8,8 +8,8 @@ export default function Footer() {
 
   return (
     <div className={styles.footerContainer}>
-      <Pagelink href="/">Home</Pagelink>
-      <Button onClick={router.back} label="Back" />
+      <Pagelink href="/start">Home</Pagelink>
+      <Button label="Back" onClick={router.back} />
     </div>
   );
 }
