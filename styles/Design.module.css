@@ -3,7 +3,7 @@
   grid-row-gap: 0.5em;
   height: 100vh;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr 1fr 2fr 2fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr 2fr 2fr;
   place-content: center;
   text-align: center;
   justify-items: center;

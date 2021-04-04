@@ -32,6 +32,16 @@ export default function Design() {
           alt="Shirt pattern"
         />
         <img className={styles.patternImage} src="/bag.png" alt="Bag pattern" />
+        <img
+          className={styles.patternImage}
+          src="/hemd.png"
+          alt="Shirt pattern"
+        />
+        <img
+          className={styles.patternImage}
+          src="/coat.png"
+          alt="Coat pattern"
+        />
       </main>
       <Footer />
     </>
