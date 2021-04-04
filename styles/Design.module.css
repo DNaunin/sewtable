@@ -24,4 +24,6 @@
 
 .patternImage {
   max-height: 5em;
+  background: none;
+  border: none;
 }
