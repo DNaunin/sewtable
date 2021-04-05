@@ -1,6 +1,7 @@
 import styles from "./Drawing.module.css";
 import { useEffect, useRef, useState } from "react";
 import Button from "../button/Button";
+import Pagelink from "../pagelink/Pagelink";
 
 let x = 1.0;
 let y = 1.0;
@@ -28,6 +29,7 @@ function Drawing() {
 
   useEffect(() => {
     setPatternImage(localStorage.getItem("Image"));
+    chooseDesign(localStorage.getItem("Design"));
   }, []);
 
   function createPattern(src) {
@@ -60,28 +62,17 @@ function Drawing() {
 
   return (
     <div className={styles.patternContainer}>
+      <canvas ref={canvasRefFabric} className={styles.canvasFabric}></canvas>
+      <canvas ref={canvasRefDesign} className={styles.canvasDesign}></canvas>
       <button
         className={styles.patternimg}
         onClick={() => createPattern(patternImage)}
       >
         <img className={styles.patternimg} src={patternImage} />
       </button>
-      <canvas ref={canvasRefFabric} className={styles.canvasFabric}></canvas>
-      <canvas ref={canvasRefDesign} className={styles.canvasDesign}></canvas>
-      <button
-        className={styles.designHoodie}
-        onClick={() => chooseDesign("/hoodie.png")}
-      >
-        <img className={styles.designHoodie} src="/hoodie.png" />
-      </button>
-      <button
-        className={styles.designSweater}
-        onClick={() => chooseDesign("/pulliSven.png")}
-      >
-        <img className={styles.designSweater} src="/pulliSven.png" />
-      </button>
       <Button className={styles.minusbtn} label="-" onClick={minusClick} />
       <Button className={styles.plusbtn} label="+" onClick={plusClick} />
+      <Pagelink href="/design">Different Design</Pagelink>
     </div>
   );
 }
