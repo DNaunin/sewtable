@@ -14,7 +14,7 @@ function HowTo() {
       </span>
       <span className={styles.info}>How does it look?</span>
 
-      <Pagelink href="/upload">Get started</Pagelink>
+      <Pagelink href="/design">Get started</Pagelink>
     </div>
   );
 }
