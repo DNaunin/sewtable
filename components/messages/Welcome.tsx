@@ -12,7 +12,7 @@ function Welcome() {
         alt="a dress form"
       />
       <Pagelink href="/introduction">How it works</Pagelink>
-      <Pagelink href="/canvas">Get started</Pagelink>
+      <Pagelink href="/design">Get started</Pagelink>
     </div>
   );
 }

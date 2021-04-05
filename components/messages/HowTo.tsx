@@ -12,9 +12,9 @@ function HowTo() {
         <li> Scale your pattern on the chosen design.</li>
         <li>How does it look?</li>
       </ul>
-      <Pagelink href="/upload">Get started</Pagelink>
+      <Pagelink href="/design">Get started</Pagelink>
     </div>
   );
 }
 
-export default HowTo;
+export default HowTo;       
