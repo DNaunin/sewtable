@@ -12,7 +12,7 @@ function HowTo() {
         <li> Scale your pattern on the chosen design.</li>
         <li>How does it look?</li>
       </ul>
-      <Pagelink href="/design">Get started</Pagelink>
+      <Pagelink href="/upload">Get started</Pagelink>
     </div>
   );
 }

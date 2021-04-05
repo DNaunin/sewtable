@@ -58,7 +58,8 @@ export default function Upload() {
             <img src={image} className={styles.image} />
           )}
         </form>
-        <Pagelink href="/canvas">Go to combine page</Pagelink>
+        <Pagelink href="/design">Go to Design Page</Pagelink>
+        <Pagelink href="/canvas">Go to Combine Page</Pagelink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>
