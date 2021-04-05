@@ -17,4 +17,4 @@ function HowTo() {
   );
 }
 
-export default HowTo;       
+export default HowTo;
