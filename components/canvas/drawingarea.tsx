@@ -13,14 +13,18 @@ function Drawing() {
   const [chosenPattern, setChosenPattern] = useState("");
 
   function minusClick() {
-    x = Number(x) * 1.08;
-    y = Number(y) * 1.08;
-    createPattern(chosenPattern);
+    const image = new Image();
+    image.src = chosenPattern;
+    if (image.width * x > 330) {
+      x = Number(x) * 0.8;
+      y = Number(y) * 0.8;
+      createPattern(chosenPattern);
+    }
   }
 
   function plusClick() {
-    x = Number(x) * 0.8;
-    y = Number(y) * 0.8;
+    x = Number(x) * 1.1;
+    y = Number(y) * 1.1;
     createPattern(chosenPattern);
   }
 
@@ -33,18 +37,17 @@ function Drawing() {
     const contextFabric = canvasRefFabric.current.getContext("2d");
     contextFabric.clearRect(0, 0, 302, 152);
     const image = new Image();
-    console.log(contextFabric.width);
     image.src = src;
     contextFabric.drawImage(
       image,
       0,
       0,
-      image.width * x,
-      image.height * y,
-      0,
-      0,
       image.width,
-      image.height
+      image.height,
+      0,
+      0,
+      image.width * x,
+      image.height * y
     );
   }
 
