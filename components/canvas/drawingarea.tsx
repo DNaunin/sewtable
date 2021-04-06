@@ -33,6 +33,7 @@ function Drawing() {
     const contextFabric = canvasRefFabric.current.getContext("2d");
     contextFabric.clearRect(0, 0, 302, 152);
     const image = new Image();
+    console.log(contextFabric.width);
     image.src = src;
     contextFabric.drawImage(
       image,
@@ -60,7 +61,7 @@ function Drawing() {
   function choosePattern(src) {
     setChosenPattern(src);
     resetZoom();
-    createPattern(chosenPattern);
+    createPattern(src);
   }
 
   function resetZoom() {
