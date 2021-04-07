@@ -74,8 +74,8 @@ function Drawing() {
 
   return (
     <div className={styles.patternContainer}>
-      <canvas ref={canvasRefFabric} className={styles.canvasFabric}></canvas>
-      <canvas ref={canvasRefDesign} className={styles.canvasDesign}></canvas>
+      <canvas ref={canvasRefFabric} className={styles.canvasFabric} />
+      <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
       <button
         className={styles.patternimg}
         onClick={() => choosePattern(patternImage)}

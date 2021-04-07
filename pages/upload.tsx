@@ -49,7 +49,7 @@ export default function Upload() {
 
           {loading ? <Loading /> : <img src={image} className={styles.image} />}
         </form>
-        <PageLink href="/design">Go to Design Page</PageLink>
+        <PageLink href="/design">Choose a Sewing Pattern</PageLink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>
