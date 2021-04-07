@@ -1,4 +1,3 @@
-import Head from "next/head";
 import styles from "../styles/Upload.module.css";
 import Footer from "../components/footer/Footer";
 import React, { useState } from "react";
@@ -31,11 +30,6 @@ export default function Upload() {
 
   return (
     <>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Sewtable</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <main className={styles.main}>
         <div className={styles.title}>Upload</div>
         <div className={styles.subtitle}>Upload your fabric photo here</div>
