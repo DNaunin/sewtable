@@ -15,7 +15,7 @@ function Drawing() {
   function minusClick() {
     const image = new Image();
     image.src = chosenPattern;
-    if (image.width * x > 330) {
+    if (image.width * (x * 0.8) > 302) {
       x = Number(x) * 0.8;
       y = Number(y) * 0.8;
       createPattern(chosenPattern);
