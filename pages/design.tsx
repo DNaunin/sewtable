@@ -18,7 +18,7 @@ export default function Design() {
         </div>
         <button
           onClick={() => storeDesign("/pulliSven.png")}
-          className={styles.patternImage}
+          className={styles.designButton}
         >
           <img
             className={styles.patternImage}
@@ -27,7 +27,7 @@ export default function Design() {
           />
         </button>
         <button
-          className={styles.patternImage}
+          className={styles.designButton}
           onClick={() => storeDesign("/hoodie.png")}
         >
           <img
@@ -37,7 +37,7 @@ export default function Design() {
           />
         </button>
         <button
-          className={styles.patternImage}
+          className={styles.designButton}
           onClick={() => storeDesign("/shirt.png")}
         >
           <img
@@ -47,7 +47,7 @@ export default function Design() {
           />
         </button>
         <button
-          className={styles.patternImage}
+          className={styles.designButton}
           onClick={() => storeDesign("/bag.png")}
         >
           <img
@@ -57,7 +57,7 @@ export default function Design() {
           />
         </button>
         <button
-          className={styles.patternImage}
+          className={styles.designButton}
           onClick={() => storeDesign("/hemd.png")}
         >
           <img
@@ -67,7 +67,7 @@ export default function Design() {
           />
         </button>
         <button
-          className={styles.patternImage}
+          className={styles.designButton}
           onClick={() => storeDesign("/coat.png")}
         >
           <img
