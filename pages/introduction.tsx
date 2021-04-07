@@ -1,7 +1,7 @@
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Introduction.module.css";
 import HowTo from "../components/messages/HowTo";
 
-export default function Home() {
+export default function Introduction() {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
