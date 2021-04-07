@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Sewtable</title>
-        <link rel="icon" href="/Sewing.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
     </>
   );
