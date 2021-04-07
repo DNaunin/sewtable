@@ -1,7 +1,7 @@
 import styles from "../styles/Upload.module.css";
 import Footer from "../components/footer/Footer";
 import React, { useState } from "react";
-import Pagelink from "../components/pagelink/Pagelink";
+import PageLink from "../components/pagelink/Pagelink";
 import Loading from "../components/loading/Loading";
 
 export default function Upload() {
@@ -49,7 +49,7 @@ export default function Upload() {
 
           {loading ? <Loading /> : <img src={image} className={styles.image} />}
         </form>
-        <Pagelink href="/design">Go to Design Page</Pagelink>
+        <PageLink href="/design">Go to Design Page</PageLink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>

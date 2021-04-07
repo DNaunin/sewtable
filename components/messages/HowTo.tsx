@@ -1,5 +1,5 @@
 import styles from "./HowTo.module.css";
-import Pagelink from "../pagelink/Pagelink";
+import PageLink from "../pagelink/Pagelink";
 
 function HowTo() {
   return (
@@ -12,7 +12,7 @@ function HowTo() {
         <li> Scale your pattern on the chosen design.</li>
         <li>How does it look?</li>
       </ul>
-      <Pagelink href="/upload">Get started</Pagelink>
+      <PageLink href="/upload">Get started</PageLink>
     </div>
   );
 }

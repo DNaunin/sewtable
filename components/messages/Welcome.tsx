@@ -1,5 +1,5 @@
 import styles from "./Welcome.module.css";
-import Pagelink from "../pagelink/Pagelink";
+import PageLink from "../pagelink/Pagelink";
 
 function Welcome() {
   return (
@@ -11,8 +11,8 @@ function Welcome() {
         src="/schneiderpuppe.svg"
         alt="a dress form"
       />
-      <Pagelink href="/introduction">How it works</Pagelink>
-      <Pagelink href="/upload">Get started</Pagelink>
+      <PageLink href="/introduction">How it works</PageLink>
+      <PageLink href="/upload">Get started</PageLink>
     </div>
   );
 }
