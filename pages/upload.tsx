@@ -2,6 +2,7 @@ import styles from "../styles/Upload.module.css";
 import Footer from "../components/footer/Footer";
 import React, { useState } from "react";
 import Pagelink from "../components/pagelink/Pagelink";
+import Loading from "../components/loading/Loading";
 
 export default function Upload() {
   const [loading, setLoading] = useState(false);
@@ -46,14 +47,9 @@ export default function Upload() {
             onChange={uploadImage}
           />
 
-          {loading ? (
-            <div className={styles.subtitle}>Loading... </div>
-          ) : (
-            <img src={image} className={styles.image} />
-          )}
+          {loading ? <Loading /> : <img src={image} className={styles.image} />}
         </form>
         <Pagelink href="/design">Go to Design Page</Pagelink>
-        <Pagelink href="/canvas">Go to Combine Page</Pagelink>
         <p id="data"></p>
         <script src="upload.js"></script>
       </main>
