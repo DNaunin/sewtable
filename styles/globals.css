@@ -1,16 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ranchers&family=Roboto&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Ranchers,
-    sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 :root {
-  --main-color: #4d4d4d;
+  --primary-color: #4d4d4d;
   --secondary-color: #91c3d3;
-  --primary-font-color: #fff;
+  --font-color: #fff;
+  --font-family: ranchers, sans-serif;
 }
 
 a {

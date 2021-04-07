@@ -4,23 +4,21 @@
   height: 100vh;
   place-content: center;
   text-align: center;
-  color: var(--main-color);
+  color: var(--primary-color);
   align-content: space-around;
 }
 
 .title {
   font-size: 1.8rem;
-  font-family: Ranchers, sans-serif;
+  font-family: var(--font-family);
 }
 
 .subtitle {
   font-size: 1rem;
-  font-family: Roboto, sans-serif;
 }
 
 .input {
   font-size: 1rem;
-  font-family: Roboto, sans-serif;
 }
 
 .form {

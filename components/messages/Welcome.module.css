@@ -1,20 +1,19 @@
 .welcomecontainer {
   display: grid;
-  grid-template-columns: 2fr, 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   grid-gap: 3rem;
 }
 
 .title {
-  font-family: Ranchers, sans-serif;
-  color: var(--main-color);
+  font-family: var(--font-family);
+  color: var(--primary-color);
   text-align: center;
   font-size: 1.8rem;
   align-self: end;
 }
 
 .subtitle {
-  font-family: Roboto, sans-serif;
   color: var(--main-color);
   text-align: center;
   font-size: 1rem;

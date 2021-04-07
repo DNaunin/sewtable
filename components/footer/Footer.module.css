@@ -3,7 +3,7 @@
   padding: 1rem;
   position: fixed;
   bottom: 0;
-  background-color: var(--main-color);
+  background-color: var(--primary-color);
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   display: flex;
