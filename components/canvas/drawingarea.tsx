@@ -1,7 +1,7 @@
 import styles from "./Drawing.module.css";
 import { useEffect, useRef, useState } from "react";
 import Button from "../button/Button";
-import Pagelink from "../pagelink/Pagelink";
+import PageLink from "../pagelink/Pagelink";
 
 let x = 1.0;
 let y = 1.0;
@@ -74,8 +74,8 @@ function Drawing() {
 
   return (
     <div className={styles.patternContainer}>
-      <canvas ref={canvasRefFabric} className={styles.canvasFabric}></canvas>
-      <canvas ref={canvasRefDesign} className={styles.canvasDesign}></canvas>
+      <canvas ref={canvasRefFabric} className={styles.canvasFabric} />
+      <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
       <button
         className={styles.patternimg}
         onClick={() => choosePattern(patternImage)}
@@ -84,7 +84,7 @@ function Drawing() {
       </button>
       <Button className={styles.minusbtn} label="-" onClick={minusClick} />
       <Button className={styles.plusbtn} label="+" onClick={plusClick} />
-      <Pagelink href="/design">Different Design</Pagelink>
+      <PageLink href="/design">Different Design</PageLink>
       <button
         className={styles.examplePattern}
         onClick={() => choosePattern("/pusteblume.jpg")}

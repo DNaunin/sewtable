@@ -5,19 +5,21 @@
 }
 
 .title {
-  grid-area: 1 / 1 / 2 / 3;
   font-size: 1.8rem;
   font-family: var(--font-family);
 }
 
 .subtitle {
-  grid-area: 2 / 1 / 3 / 3;
   font-size: 1rem;
 }
 
+.designButton {
+  background: #f8f9fa;
+  margin: 1rem;
+}
+
 .patternImage {
-  max-height: 5em;
+  max-height: 6em;
   background: none;
-  border: none;
-  margin: 0.8rem;
+  padding: 0.5rem;
 }
