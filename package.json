@@ -19,12 +19,10 @@
     "build-server": "tsc --project tsconfig.server.json"
   },
   "dependencies": {
-    "babel": "^6.23.0",
     "cloudinary-react": "^1.7.0",
     "next": "10.0.8",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-hook-form": "^6.15.5"
+    "react-dom": "17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
