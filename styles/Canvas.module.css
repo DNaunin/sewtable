@@ -2,7 +2,7 @@
   display: grid;
   align-items: center;
   justify-items: center;
-  grid-gap: 5em;
+  grid-gap: 1.1em;
 }
 
 .title {
