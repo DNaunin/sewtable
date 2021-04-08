@@ -53,12 +53,12 @@ function Drawing() {
   function minusClick() {
     const uploadedImage = new Image();
     uploadedImage.src = uploadedImageSrc;
-    if (uploadedImage.width * (zoom * 0.8) > 302) {
-      setZoom(Number(zoom) * 0.8);
+    if (uploadedImage.width * (+zoom * 0.8) > 302) {
+      setZoom(+zoom * 0.8);
     }
   }
   function plusClick() {
-    setZoom(Number(zoom) * 1.1);
+    setZoom(+zoom * 1.1);
   }
 
   return (
