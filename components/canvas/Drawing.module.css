@@ -1,13 +1,12 @@
-.patternContainer {
+.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 0.5fr) 1fr 0.5fr;
-  grid-row-gap: 0.8rem;
+  grid-template-rows: repeat(2, 0.3fr) 1fr 0.5fr;
   align-items: center;
   justify-items: center;
 }
 
-.patternimg {
+.patternImg {
   grid-area: 1 / 1 / 3 / 2;
   width: 75%;
   height: auto;
@@ -17,28 +16,23 @@
   padding: 0;
 }
 
-.minusbtn {
+.minusBtn {
   grid-area: 1 / 2 / 2 / 3;
   width: 45%;
   height: auto;
 }
 
-.plusbtn {
+.plusBtn {
   grid-area: 2 / 2 / 3 / 3;
   width: 45%;
   height: auto;
-}
-
-.canvasFabric {
-  grid-area: 3 / 1 / 4 / 3;
-  border: 1px solid black;
-  justify-self: center;
 }
 
 .canvasDesign {
   grid-area: 3 / 1 / 4 / 3;
   border: 1px solid black;
   justify-self: center;
+  max-height: 260px;
 }
 
 .examplePattern {
