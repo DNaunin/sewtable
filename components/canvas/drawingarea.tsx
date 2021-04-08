@@ -3,94 +3,73 @@ import { useEffect, useRef, useState } from "react";
 import Button from "../button/Button";
 import PageLink from "../pagelink/Pagelink";
 
-let x = 1.0;
-let y = 1.0;
+function getFromLocalStorage<T>(key: string, defaultValue: T) {
+  return localStorage.getItem(key) || defaultValue;
+}
 
 function Drawing() {
-  const canvasRefFabric = useRef(null);
-  const canvasRefDesign = useRef(null);
-  const [patternImage, setPatternImage] = useState("");
-  const [chosenPattern, setChosenPattern] = useState("");
+  const [zoom, setZoom] = useState<number>(1.0);
+  const canvasRefDesign = useRef<HTMLCanvasElement>(null);
+  const uploadedImageSrc = getFromLocalStorage<string>(
+    "Image",
+    "/pusteblume.jpg"
+  );
+  const selectedPatternSrc = getFromLocalStorage<string>("Design", "");
+  useEffect(() => {
+    const context = canvasRefDesign.current.getContext("2d");
+    context.clearRect(0, 0, 302, 152);
+    const uploadedImage = new Image();
+    uploadedImage.src = uploadedImageSrc;
+    const selectedPattern = new Image();
+    selectedPattern.src = selectedPatternSrc;
+    function drawSelectedPattern() {
+      context.drawImage(selectedPattern, 0, 0, 302, 152);
+    }
+    function drawUploadedImage() {
+      context.drawImage(
+        uploadedImage,
+        0,
+        0,
+        uploadedImage.width,
+        uploadedImage.height,
+        0,
+        0,
+        uploadedImage.width * zoom,
+        uploadedImage.height * zoom
+      );
+      if (selectedPattern.complete) {
+        drawSelectedPattern();
+      } else {
+        selectedPattern.onload = drawSelectedPattern;
+      }
+    }
+    if (uploadedImage.complete) {
+      drawUploadedImage();
+    } else {
+      uploadedImage.onload = drawUploadedImage;
+    }
+  }, [uploadedImageSrc, selectedPatternSrc, zoom]);
 
   function minusClick() {
-    const image = new Image();
-    image.src = chosenPattern;
-    if (image.width * (x * 0.8) > 302) {
-      x = Number(x) * 0.8;
-      y = Number(y) * 0.8;
-      createPattern(chosenPattern);
+    const uploadedImage = new Image();
+    uploadedImage.src = uploadedImageSrc;
+    if (uploadedImage.width * (+zoom * 0.8) > 302) {
+      setZoom(+zoom * 0.8);
     }
   }
-
   function plusClick() {
-    x = Number(x) * 1.1;
-    y = Number(y) * 1.1;
-    createPattern(chosenPattern);
-  }
-
-  useEffect(() => {
-    setPatternImage(localStorage.getItem("Image"));
-    chooseDesign(localStorage.getItem("Design"));
-  }, []);
-
-  function createPattern(src) {
-    const contextFabric = canvasRefFabric.current.getContext("2d");
-    contextFabric.clearRect(0, 0, 302, 152);
-    const image = new Image();
-    image.src = src;
-    contextFabric.drawImage(
-      image,
-      0,
-      0,
-      image.width,
-      image.height,
-      0,
-      0,
-      image.width * x,
-      image.height * y
-    );
-  }
-
-  function chooseDesign(src) {
-    const contextDesign = canvasRefDesign.current.getContext("2d");
-    contextDesign.clearRect(0, 0, 302, 152);
-    const design = new Image();
-    design.src = src;
-    design.onload = () => {
-      contextDesign.drawImage(design, 0, 0, 302, 152);
-    };
-  }
-
-  function choosePattern(src) {
-    setChosenPattern(src);
-    resetZoom();
-    createPattern(src);
-  }
-
-  function resetZoom() {
-    x = 1.0;
-    y = 1.0;
+    setZoom(+zoom * 1.1);
   }
 
   return (
     <div className={styles.patternContainer}>
-      <canvas ref={canvasRefFabric} className={styles.canvasFabric} />
       <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
-      <button
-        className={styles.patternimg}
-        onClick={() => choosePattern(patternImage)}
-      >
-        <img className={styles.patternimg} src={patternImage} />
+      <button className={styles.patternimg}>
+        <img className={styles.patternimg} src={uploadedImageSrc} />
       </button>
       <Button className={styles.minusbtn} label="-" onClick={minusClick} />
       <Button className={styles.plusbtn} label="+" onClick={plusClick} />
       <PageLink href="/design">Different Design</PageLink>
-      <button
-        className={styles.examplePattern}
-        onClick={() => choosePattern("/pusteblume.jpg")}
-      >
-        <img className={styles.examplePattern} src={"/pusteblume.jpg"} />
-      </button>
     </div>
   );
 }
