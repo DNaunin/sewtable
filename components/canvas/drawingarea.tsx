@@ -7,7 +7,7 @@ let x = 1.0;
 let y = 1.0;
 
 function Drawing() {
-  const canvasRefFabric = useRef(null);
+  // const canvasRefFabric = useRef(null);
   const canvasRefDesign = useRef(null);
   const [patternImage, setPatternImage] = useState("");
   const [chosenPattern, setChosenPattern] = useState("");
@@ -34,7 +34,7 @@ function Drawing() {
   }, []);
 
   function createPattern(src) {
-    const contextFabric = canvasRefFabric.current.getContext("2d");
+    const contextFabric = canvasRefDesign.current.getContext("2d");
     contextFabric.clearRect(0, 0, 302, 152);
     const image = new Image();
     image.src = src;
@@ -74,7 +74,7 @@ function Drawing() {
 
   return (
     <div className={styles.patternContainer}>
-      <canvas ref={canvasRefFabric} className={styles.canvasFabric} />
+      <canvas ref={canvasRefDesign} className={styles.canvasFabric} />
       <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
       <button
         className={styles.patternimg}
