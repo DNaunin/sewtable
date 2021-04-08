@@ -1,26 +1,26 @@
-import styles from "../styles/Start.module.css";
+import styles from "../styles/Index.module.css";
 import router from "next/router";
 import { useEffect } from "react";
 
-export default function Start() {
+export default function Index() {
   useEffect(() => {
     setTimeout(() => router.push("/start"), 3000);
   });
   return (
-    <div className={styles.container}>
+    <>
       <main className={styles.main}>
         <div className={styles.title}>Sewtable</div>
         <img
-          className={styles.machineimg}
+          className={styles.machineImg}
           src="/machine.svg"
           alt="sewing machine"
         />
         <img
-          className={styles.footerimg}
+          className={styles.footerImg}
           src="/needles.svg"
           alt="sewing utensils"
         />
       </main>
-    </div>
+    </>
   );
 }

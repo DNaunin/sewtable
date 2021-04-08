@@ -1,0 +1,21 @@
+.main {
+  height: 100vh;
+  background-color: var(--primary-color);
+  display: grid;
+}
+.title {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  text-align: center;
+  font-size: 1.8rem;
+  align-self: end;
+}
+
+.machineImg {
+  margin: 1.5rem 8.3rem;
+}
+
+.footerImg {
+  position: fixed;
+  bottom: 0;
+}

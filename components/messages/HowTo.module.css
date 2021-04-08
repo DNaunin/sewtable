@@ -2,22 +2,17 @@
   height: 100%;
   background-color: var(--primary-color);
   text-align: center;
-  padding-top: 5rem;
   color: var(--font-color);
 }
 
 .title {
   font-family: var(--font-family);
   font-size: 1.8rem;
-  margin-bottom: 2rem;
 }
 
 .info {
-  display: grid;
-  grid-template-rows: repeat(6, 1fr);
   list-style-type: none;
-  text-align: start;
-  padding-left: 1.5rem;
+  padding: 3em;
   font-size: 1.1rem;
   line-height: 3;
 }
