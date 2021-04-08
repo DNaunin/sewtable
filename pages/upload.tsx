@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import PageLink from "../components/pagelink/Pagelink";
 import Loading from "../components/loading/Loading";
 
+const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
+console.log(cloud);
+
 export default function Upload() {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
@@ -16,7 +19,7 @@ export default function Upload() {
     setLoading(true);
 
     const res = await fetch(
-      "https://api.cloudinary.com/v1_1/diote21e/image/upload",
+      `https://api.cloudinary.com/v1_1/${cloud}/image/upload`,
       {
         method: "POST",
         body: data,
