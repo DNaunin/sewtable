@@ -15,15 +15,24 @@ function Drawing() {
     "/pusteblume.jpg"
   );
   const selectedPatternSrc = getFromLocalStorage<string>("Design", "");
+  const selectedPattern = new Image();
+  selectedPattern.src = selectedPatternSrc;
   useEffect(() => {
     const context = canvasRefDesign.current.getContext("2d");
-    context.clearRect(0, 0, 302, 152);
     const uploadedImage = new Image();
     uploadedImage.src = uploadedImageSrc;
-    const selectedPattern = new Image();
-    selectedPattern.src = selectedPatternSrc;
+
+    context.clearRect(0, 0, selectedPattern.width, selectedPattern.height);
+
     function drawSelectedPattern() {
-      context.drawImage(selectedPattern, 0, 0, 302, 152);
+      context.drawImage(
+        selectedPattern,
+        0,
+        0,
+        selectedPattern.width,
+
+        selectedPattern.height
+      );
     }
     function drawUploadedImage() {
       context.drawImage(
@@ -62,13 +71,18 @@ function Drawing() {
   }
 
   return (
-    <div className={styles.patternContainer}>
-      <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
-      <button className={styles.patternimg}>
-        <img className={styles.patternimg} src={uploadedImageSrc} />
+    <div className={styles.container}>
+      <canvas
+        ref={canvasRefDesign}
+        className={styles.canvasDesign}
+        height={selectedPattern.height}
+        width={selectedPattern.width}
+      />
+      <button className={styles.patternImg}>
+        <img className={styles.patternImg} src={uploadedImageSrc} />
       </button>
-      <Button className={styles.minusbtn} label="-" onClick={minusClick} />
-      <Button className={styles.plusbtn} label="+" onClick={plusClick} />
+      <Button className={styles.minusBtn} label="-" onClick={minusClick} />
+      <Button className={styles.plusBtn} label="+" onClick={plusClick} />
       <PageLink href="/design">Different Design</PageLink>
     </div>
   );
