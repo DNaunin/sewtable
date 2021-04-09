@@ -87,7 +87,7 @@ function Drawing() {
       </button>
       <Button className={styles.minusBtn} label="-" onClick={minusClick} />
       <Button className={styles.plusBtn} label="+" onClick={plusClick} />
-      <PageLink href="/design">Different Design</PageLink>
+      <PageLink href="/design">Design Page</PageLink>
       <Button onClick={saveCanvas} label="Show Final Product" />
     </div>
   );
