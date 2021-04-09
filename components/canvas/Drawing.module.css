@@ -9,7 +9,7 @@
 .patternImg {
   grid-area: 1 / 1 / 3 / 2;
   width: 75%;
-  height: auto;
+  max-height: 6rem;
   justify-self: end;
   border: none;
   background: none;
