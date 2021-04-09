@@ -14,6 +14,7 @@ function Drawing() {
     "Image",
     "/pusteblume.jpg"
   );
+
   const selectedPatternSrc = getFromLocalStorage<string>("Design", "");
   const selectedPattern = new Image();
   selectedPattern.src = selectedPatternSrc;
@@ -21,6 +22,10 @@ function Drawing() {
     const context = canvasRefDesign.current.getContext("2d");
     const uploadedImage = new Image();
     uploadedImage.src = uploadedImageSrc;
+
+    const myCanvas = canvasRefDesign.current;
+    const canvasImage = myCanvas.toDataURL();
+    console.log(canvasImage);
 
     context.clearRect(0, 0, selectedPattern.width, selectedPattern.height);
 
