@@ -1,0 +1,22 @@
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 0.2fr 0.2fr 1fr 0.5fr;
+  background-color: var(--primary-color);
+  color: var(--font-color);
+  text-align: center;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-family: var(--font-family);
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+.finalImage {
+  align-self: center;
+  justify-self: center;
+}
