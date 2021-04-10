@@ -8,14 +8,12 @@ const cloud = process.env.NEXT_PUBLIC_CLOUDINARY_URL;
 
 export default function Upload() {
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState("");
+  const [images, setImages] = useState([]);
 
-  const uploadImage = async (e) => {
-    const files = e.target.files;
+  const uploadImage = async (file) => {
     const data = new FormData();
-    data.append("file", files[0]);
+    data.append("file", file);
     data.append("upload_preset", "sewtableimages");
-    setLoading(true);
 
     const res = await fetch(
       `https://api.cloudinary.com/v1_1/${cloud}/image/upload`,
@@ -24,11 +22,24 @@ export default function Upload() {
         body: data,
       }
     );
+    const uploadedFile = await res.json();
+    return uploadedFile.secure_url;
+  };
 
-    const file = await res.json();
-    setImage(file.secure_url);
-    localStorage.setItem("Image", file.secure_url);
+  const uploadImages = async (e) => {
+    const savedImages = JSON.parse(localStorage.getItem("Images"));
+    const urls = [];
+    const files: FileList = e.target.files;
+    console.log(files);
+    setLoading(true);
+    for (let i = 0; i < files.length; i++) {
+      const newPath = await uploadImage(files[i]);
+      urls.push(newPath);
+    }
     setLoading(false);
+    setImages(urls);
+    const imageArray = [...(savedImages || []), ...urls];
+    localStorage.setItem("Images", JSON.stringify(imageArray));
   };
 
   return (
@@ -46,10 +57,16 @@ export default function Upload() {
             type="file"
             name="files[]"
             multiple
-            onChange={uploadImage}
+            onChange={uploadImages}
           />
 
-          {loading ? <Loading /> : <img src={image} className={styles.image} />}
+          {loading ? (
+            <Loading />
+          ) : (
+            images.map((image, index) => (
+              <img key={index} src={image} className={styles.image} />
+            ))
+          )}
         </form>
         <PageLink href="/design">Choose a Sewing Pattern</PageLink>
         <p id="data"></p>
