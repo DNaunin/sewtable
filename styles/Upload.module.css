@@ -1,10 +1,9 @@
 .main {
-  display: grid;
   height: 100vh;
-  place-content: center;
   text-align: center;
   color: var(--primary-color);
-  align-content: space-between;
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 3fr 1fr;
 }
 
 .title {
@@ -21,11 +20,7 @@
   font-size: 1rem;
 }
 
-.form {
-  display: grid;
-  grid-row-gap: 0.5em;
-}
-
-.image {
-  height: 200px;
+.uploadedImage {
+  max-height: 7em;
+  margin: 1em;
 }

@@ -6,11 +6,13 @@
   justify-items: center;
 }
 
-.patternImg {
+.imageContainer {
   grid-area: 1 / 1 / 3 / 2;
-  width: 75%;
+}
+
+.patternImg {
+  width: 50%;
   max-height: 6rem;
-  justify-self: end;
   border: none;
   background: none;
   padding: 0;
