@@ -62,11 +62,7 @@ function Drawing() {
     }
   }, [uploadedImageSrc, selectedPatternSrc, zoom]);
   function minusClick() {
-    const uploadedImage = new Image();
-    uploadedImage.src = uploadedImageSrc;
-    if (uploadedImage.width * (+zoom * 0.8) > 302) {
-      setZoom(+zoom * 0.8);
-    }
+    setZoom(+zoom * 0.8);
   }
   function plusClick() {
     setZoom(+zoom * 1.1);
