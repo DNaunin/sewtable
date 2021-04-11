@@ -13,7 +13,7 @@ function Drawing() {
   const canvasRefDesign = useRef<HTMLCanvasElement>(null);
   const uploadedImageSrc = getFromLocalStorage<string>(
     "Image",
-    "/pusteblume.jpg"
+    "/dandelion.jpg"
   );
   const selectedPatternSrc = getFromLocalStorage<string>("Design", "");
   useEffect(() => {

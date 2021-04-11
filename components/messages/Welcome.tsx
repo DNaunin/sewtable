@@ -6,11 +6,7 @@ function Welcome() {
     <div className={styles.welcomecontainer}>
       <span className={styles.title}>Welcome</span>
       <span className={styles.subtitle}>Get inspired and sew</span>
-      <img
-        className={styles.img}
-        src="/schneiderpuppe.svg"
-        alt="a dress form"
-      />
+      <img className={styles.img} src="/dressform.svg" alt="a dress form" />
       <PageLink href="/introduction">How it works</PageLink>
       <PageLink href="/upload">Get started</PageLink>
     </div>

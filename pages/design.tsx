@@ -17,12 +17,12 @@ export default function Design() {
           Which pattern would you like to see?
         </div>
         <button
-          onClick={() => storeDesign("/pulliSven.png")}
+          onClick={() => storeDesign("/sweater.png")}
           className={styles.designButton}
         >
           <img
             className={styles.patternImage}
-            src="/pulliSven.png"
+            src="/sweater.png"
             alt="Sweater pattern"
           />
         </button>
@@ -58,11 +58,11 @@ export default function Design() {
         </button>
         <button
           className={styles.designButton}
-          onClick={() => storeDesign("/hemd.png")}
+          onClick={() => storeDesign("/dressshirt.png")}
         >
           <img
             className={styles.patternImage}
-            src="/hemd.png"
+            src="/dressshirt.png"
             alt="Shirt pattern"
           />
         </button>
@@ -74,6 +74,36 @@ export default function Design() {
             className={styles.patternImage}
             src="/coat.png"
             alt="Coat pattern"
+          />
+        </button>
+        <button
+          className={styles.designButton}
+          onClick={() => storeDesign("/top.png")}
+        >
+          <img
+            className={styles.patternImage}
+            src="/top.png"
+            alt="Top pattern"
+          />
+        </button>
+        <button
+          className={styles.designButton}
+          onClick={() => storeDesign("/tanktop.png")}
+        >
+          <img
+            className={styles.patternImage}
+            src="/tanktop.png"
+            alt="Tanktop pattern"
+          />
+        </button>
+        <button
+          className={styles.designButton}
+          onClick={() => storeDesign("/apron.png")}
+        >
+          <img
+            className={styles.patternImage}
+            src="/apron.png"
+            alt="Apron pattern"
           />
         </button>
       </main>
