@@ -10,6 +10,9 @@ export default function Canvas() {
     <>
       <main className={styles.main}>
         <span className={styles.title}>Combine fabric and pattern </span>
+        <span className={styles.subtitle}>
+          Pick a pattern! Scale pattern with - and +.
+        </span>
         <DynamicDrawing />
         <Footer />
       </main>

@@ -7,24 +7,33 @@ import { useRouter } from "next/router";
 function getFromLocalStorage<T>(key: string, defaultValue: T) {
   return localStorage.getItem(key) || defaultValue;
 }
+
+function getUploadedImages() {
+  const uploadedImage = getFromLocalStorage("Images", '["/pusteblume.jpg"]');
+  return JSON.parse(uploadedImage);
+}
+
 function Drawing() {
   const router = useRouter();
   const [zoom, setZoom] = useState<number>(1.0);
   const canvasRefDesign = useRef<HTMLCanvasElement>(null);
-  const uploadedImageSrc = getFromLocalStorage<string>(
-    "Image",
-    "/pusteblume.jpg"
-  );
+  const uploadedImages = getUploadedImages();
+  let chosenImage = uploadedImages[0];
+
   const selectedPatternSrc = getFromLocalStorage<string>("Design", "");
   useEffect(() => {
+    console.log(chosenImage);
     const designCanvas = canvasRefDesign.current;
     const context = designCanvas.getContext("2d");
+
     const uploadedImage = new Image();
     uploadedImage.crossOrigin = "anonymous";
-    uploadedImage.src = uploadedImageSrc;
+    uploadedImage.src = chosenImage;
+
     const selectedPattern = new Image();
     selectedPattern.crossOrigin = "anonymous";
     selectedPattern.src = selectedPatternSrc;
+
     function handleSelectedPatternLoad() {
       canvasRefDesign.current.width = selectedPattern.width;
       canvasRefDesign.current.height = selectedPattern.height;
@@ -60,16 +69,18 @@ function Drawing() {
     } else {
       selectedPattern.onload = handleSelectedPatternLoad;
     }
-  }, [uploadedImageSrc, selectedPatternSrc, zoom]);
+  }, [chosenImage, selectedPatternSrc, zoom]);
   function minusClick() {
     const uploadedImage = new Image();
-    uploadedImage.src = uploadedImageSrc;
-    if (uploadedImage.width * (+zoom * 0.8) > 302) {
-      setZoom(+zoom * 0.8);
-    }
+    uploadedImage.src = chosenImage;
+    uploadedImage.onload = () => {
+      if (uploadedImage.width * (zoom * 0.8) > 305) {
+        setZoom(zoom * 0.8);
+      }
+    };
   }
   function plusClick() {
-    setZoom(+zoom * 1.1);
+    setZoom(zoom * 1.1);
   }
 
   function saveCanvas() {
@@ -82,9 +93,19 @@ function Drawing() {
   return (
     <div className={styles.container}>
       <canvas ref={canvasRefDesign} className={styles.canvasDesign} />
-      <button className={styles.patternImg}>
-        <img className={styles.patternImg} src={uploadedImageSrc} />
-      </button>
+      <div className={styles.imageContainer}>
+        {uploadedImages.map((image, index) => (
+          <button
+            onClick={() => {
+              chosenImage = image;
+            }}
+            key={index}
+            className={styles.patternImg}
+          >
+            <img className={styles.patternImg} src={image} />
+          </button>
+        ))}
+      </div>
       <Button className={styles.minusBtn} label="-" onClick={minusClick} />
       <Button className={styles.plusBtn} label="+" onClick={plusClick} />
       <PageLink href="/design">Design Page</PageLink>

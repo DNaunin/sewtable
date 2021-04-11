@@ -47,11 +47,7 @@ export default function Upload() {
       <main className={styles.main}>
         <div className={styles.title}>Upload</div>
         <div className={styles.subtitle}>Upload your fabric photo here</div>
-        <form
-          className={styles.form}
-          method="post"
-          encType="multipart/form-data"
-        >
+        <form method="post" encType="multipart/form-data">
           <input
             className={styles.input}
             type="file"
@@ -64,7 +60,7 @@ export default function Upload() {
             <Loading />
           ) : (
             images.map((image, index) => (
-              <img key={index} src={image} className={styles.image} />
+              <img key={index} src={image} className={styles.uploadedImage} />
             ))
           )}
         </form>
